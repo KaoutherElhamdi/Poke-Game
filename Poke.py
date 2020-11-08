@@ -107,6 +107,7 @@ class Game:
     
     def randomize_dots(self):
         self._big_dot.random_location(self._width, self._height)
+        self._small_dot.random_location(self._width, self._height)
         while self.points_intersection():
             self._small_dot.random_location(self._width, self._height)
         
