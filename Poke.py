@@ -2,7 +2,7 @@ from uagame import Window
 from pygame.time import Clock, get_ticks as get_ms
 from pygame.event import get as get_events
 from pygame.draw import circle as draw_circle
-from pygame import QUIT, Color, MOUSEBUTTONUP, KEYDOWN, K_q, K_RETURN, init as init_timer, quit, get_init
+from pygame import QUIT, Color, MOUSEBUTTONUP, KEYDOWN, K_q, K_RETURN
 from random import randint
 from math import sqrt
 
@@ -42,8 +42,6 @@ class Dot:
             
 class Game:
     def __init__(self):
-        if get_init:
-            init_timer()
             
         self._clock = Clock()
         
@@ -62,9 +60,7 @@ class Game:
         
         self._score = 0
         self._close = False
-        self._to_remove = get_ms()//1000
-        
-        init_timer()        
+        self._to_remove = get_ms()//1000       
         
     def update_game(self):
         self.window.clear()
